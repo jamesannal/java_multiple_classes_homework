@@ -43,4 +43,12 @@ public class RenterTest{
     library.rentBook(book, renter);
     assertEquals(1, renter.bookCount());
   }
+
+  @Test
+  public void canReturnBook(){
+    library.rentBook(book, renter);
+    renter.returnBook(library);
+    assertEquals(0, renter.bookCount());
+    assertEquals(1, library.bookCount());
+  }
 }

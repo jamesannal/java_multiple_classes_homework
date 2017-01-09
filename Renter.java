@@ -27,4 +27,9 @@ public class Renter{
   public boolean isRenting(){
     return bookCount() == books.length;
   }
+
+  public void returnBook(Library library){
+    library.addBook(books[0]);
+    books[0] = null;
+  }
 }
